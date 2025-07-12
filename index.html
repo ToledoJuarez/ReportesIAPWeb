@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes Inventario AP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Reportes Inventario AP</h1>
+    </header>
+
+    <nav>
+        <button id="showFormBtn" class="active">Formulario Reportes IAP</button>
+        <button id="showReportsBtn">Revisar Reportes</button>
+    </nav>
+
+    <main>
+        <section id="formView" class="view active">
+            <h2>Formulario de Reportes IAP</h2>
+            <form id="reportForm">
+                <div class="form-group">
+                    <label for="tipoReporte">Tipo de Reporte:</label>
+                    <select id="tipoReporte" required>
+                        <option value="">Selecciona un tipo</option>
+                        <option value="Retirada">Retirada</option>
+                        <option value="Sin acceso">Sin acceso</option>
+                        <option value="Mover coordenadas">Mover Coordenadas</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="numeroPoste">Número de Poste:</label>
+                    <input type="number" id="numeroPoste" placeholder="Ej: 12345">
+                </div>
+
+                <div class="form-group">
+                    <label for="posteReferencia">Poste de Referencia:</label>
+                    <input type="text" id="posteReferencia" placeholder="Ej: Calle Principal 123">
+                </div>
+
+                <div class="form-group">
+                    <label for="coordenadas">Coordenadas:</label>
+                    <input type="text" id="coordenadas" placeholder="Ej: -14.6345, -90.5097">
+                </div>
+
+                <div class="form-group">
+                    <label for="observaciones">Observaciones:</label>
+                    <textarea id="observaciones" rows="4" placeholder="Cualquier detalle adicional..."></textarea>
+                </div>
+
+                <!-- <div class="form-group">
+                    <label for="fotoMaps">Foto de Maps (requerida):</label>
+                    <input type="file" id="fotoMaps" accept="image/*" required>
+                    <div id="fotoMapsPreview" class="image-preview"></div>
+                </div> -->
+
+                <div class="form-group">
+                    <label for="fotoMaps">Foto de Maps (requerida):</label>
+                    <label for="fotoMaps" class="file-upload-label">Seleccionar imagen</label>
+                    <span id="fotoMapsFileName" class="file-name-display"></span>
+                    <input type="file" id="fotoMaps" accept="image/*" required>
+                    <div id="fotoMapsPreview" class="image-preview"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fotoCampo">Foto de Campo (requerida):</label>
+                    <label for="fotoCampo" class="file-upload-label">Seleccionar imagen o tomar foto</label>
+                    <span id="fotoCampoFileName" class="file-name-display"></span>
+                    <input type="file" id="fotoCampo" accept="image/*" required capture="camera">
+                    <div id="fotoCampoPreview" class="image-preview"></div>
+                </div>
+                <!-- <div class="form-group">
+                    <label for="fotoCampo">Foto de Campo (requerida):</label>
+                    <input type="file" id="fotoCampo" accept="image/*" required capture="camera">
+                    <div id="fotoCampoPreview" class="image-preview"></div>
+                </div> -->
+
+                
+                <div class="form-actions">
+                    <button type="submit" id="enviarReporteBtn" disabled>Enviar Reporte</button>
+                    <button type="button" id="limpiarFormBtn">Limpiar Formulario</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="reportsView" class="view">
+            <h2>Revisar Reportes</h2>
+            <div class="search-container">
+                <input type="text" id="buscador" placeholder="Buscar por número de poste, referencia, etc.">
+                <button id="buscarReporteBtn">Buscar Reporte</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="reportsTable">
+                    <thead>
+                        <tr>
+                            <th>Fecha</th>
+                            <th>Tipo Reporte</th>
+                            <th>Número de Poste</th>
+                            <th>Poste de Referencia</th>
+                            <th>Coordenadas</th>
+                            <th>Observaciones</th>
+                            <th>Foto Maps</th>
+                            <th>Foto Campo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <div id="imageModal" class="modal">
+        <span class="close-button">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

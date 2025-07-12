@@ -1,0 +1,496 @@
+/* Estilos Generales */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: blue; /* Verde Bootstrap */
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #28a745;
+}
+
+/* Navegación de Vistas */
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #e9ecef; /* Gris claro */
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+nav button {
+    background-color: #007bff; /* Azul Bootstrap */
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+nav button.active {
+    background-color: #28a745; /* Verde para la pestaña activa */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+main {
+    padding: 1.5rem;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Ocultar/Mostrar Vistas */
+.view {
+    display: none;
+}
+
+.view.active {
+    display: block;
+}
+
+/* Estilos de Formulario */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: calc(100% - 22px); /* Ajuste para el padding y borde */
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Incluye padding y borde en el ancho */
+}
+
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 8px 0;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+.form-actions {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 0.5rem;
+}
+
+.form-actions button[type="submit"] {
+    background-color: #28a745; /* Verde para Enviar */
+    color: white;
+}
+
+.form-actions button[type="submit"]:hover:not(:disabled) {
+    background-color: #218838; /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.form-actions button[type="submit"]:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.form-actions button[type="button"] {
+    background-color: #dc3545; /* Rojo para Limpiar */
+    color: white;
+}
+
+.form-actions button[type="button"]:hover {
+    background-color: #c82333; /* Rojo más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+/* Previsualización de Imágenes */
+.image-preview {
+    margin-top: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 200px;
+    display: block;
+    object-fit: contain; /* Asegura que la imagen se ajuste bien sin cortarse */
+}
+
+/* Estilos de Búsqueda */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.search-container input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-container button {
+    padding: 10px 20px;
+    background-color: #17a2b8; /* Azul claro para Buscar */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #138496; /* Azul claro más oscuro */
+}
+
+/* Estilos de Tabla Responsiva */
+.table-container {
+    max-height: 600px; /* Altura máxima para scroll vertical */
+    overflow: auto; /* Scroll vertical si la tabla es muy larga */
+    width: 100%;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 0 7px rgba(0,0,0,0.05);
+}
+
+#reportsTable {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px; /* Ancho mínimo para scroll horizontal en pantallas pequeñas */
+}
+
+#reportsTable thead {
+    background-color: #007bff; /* Azul para el encabezado */
+    color: white;
+    position: sticky; /* Encabezado fijo al hacer scroll */
+    top: 0;
+    z-index: 10;
+}
+
+#reportsTable th,
+#reportsTable td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+    white-space: nowrap; /* Evita que el texto se rompa en varias líneas */
+}
+
+#reportsTable tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Color para filas pares */
+}
+
+#reportsTable tbody tr:hover {
+    background-color: #e9ecef; /* Resaltar fila al pasar el ratón */
+}
+
+#reportsTable img.thumbnail {
+    width: 50px;
+    height: 50px;
+    object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#reportsTable img.thumbnail:hover {
+    transform: scale(1.1); /* Efecto al pasar el ratón por la miniatura */
+}
+
+/* Modal de Imagen */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la pantalla */
+    z-index: 1000; /* Por encima de todo lo demás */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Alto completo */
+    overflow: auto; /* Habilitar scroll si la imagen es muy grande */
+    background-color: rgba(0,0,0,0.9); /* Fondo negro semitransparente */
+    padding-top: 60px; /* Espacio desde arriba */
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    max-height: 80vh; /* Máximo 80% del alto de la ventana */
+    object-fit: contain;
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        margin: 10px auto;
+    }
+
+    nav button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: calc(100% - 20px); /* Ajuste menor para móviles */
+    }
+
+    .form-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-actions button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    .search-container {
+        flex-direction: column;
+    }
+
+    .search-container input,
+    .search-container button {
+        width: 100%;
+    }
+
+    #reportsTable thead {
+        font-size: 0.9em;
+    }
+
+    #reportsTable th,
+    #reportsTable td {
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+
+    .modal-content {
+        width: 95%;
+        max-width: 100%;
+    }
+
+    .close-button {
+        top: 10px;
+        right: 20px;
+        font-size: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    nav button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        margin: 0 0.2rem;
+    }
+    .form-group label {
+        font-size: 0.9em;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+}
+
+/* --- Estilos para Input de Archivo (Subir Fotos) --- */
+
+/* Oculta el input original de tipo file (porque es difícil de estilizar) */
+.form-group input[type="file"] {
+    display: none; /* Ocultamos el input de archivo por defecto */
+}
+
+/* Estilo para el label que actuará como botón de carga */
+.file-upload-label {
+    display: inline-block; /* Ocupa el espacio justo necesario */
+    background-color: #007bff; /* Azul para el botón de carga */
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 5px; /* Pequeño espacio sobre la previsualización */
+    margin-bottom: 10px; /* Espacio debajo del label */
+    border: 1px solid #007bff; /* Borde del mismo color */
+}
+
+.file-upload-label:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    transform: translateY(-2px);
+}
+
+.file-upload-label:active {
+    transform: translateY(0); /* Sin desplazamiento al hacer click */
+}
+
+/* Estilos para el texto de "Seleccionar archivo" o el nombre del archivo */
+.file-name-display {
+    font-size: 0.9em;
+    color: #666;
+    margin-left: 10px;
+    display: inline-block; /* Para que esté al lado del botón si hay espacio */
+    max-width: calc(100% - 180px); /* Ajusta según el ancho del botón */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Puntos suspensivos si el nombre es muy largo */
+    vertical-align: middle; /* Alinea verticalmente con el label */
+}
+
+/* --- Estilos para la Previsualización de Imágenes --- */
+.image-preview {
+    margin-top: 10px;
+    border: 2px dashed #aed9ff; /* Borde punteado más visible y azul claro */
+    border-radius: 8px; /* Bordes más suaves */
+    min-height: 150px; /* Un poco más de altura mínima */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #eaf6ff; /* Fondo azul muy claro para la zona de preview */
+    position: relative; /* Para posicionar el texto de "no imagen" */
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.05); /* Sutil sombra interna */
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 250px; /* Un poco más de altura máxima para la imagen */
+    display: block;
+    object-fit: contain;
+    border-radius: 6px; /* Bordes redondeados para la imagen previsualizada */
+}
+
+/* Texto dentro de la previsualización cuando no hay imagen */
+.image-preview:empty::before {
+    content: "Haz clic en 'Seleccionar imagen' para cargar";
+    color: #999;
+    font-style: italic;
+    font-size: 0.9em;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Media Queries para Responsividad (ajustes específicos para fotos) */
+@media (max-width: 768px) {
+    .file-upload-label {
+        display: block; /* El label-botón ocupa todo el ancho */
+        width: 100%;
+        text-align: center;
+        margin-bottom: 5px; /* Ajuste de margen */
+    }
+    .file-name-display {
+        display: block; /* El nombre del archivo debajo del botón */
+        text-align: center;
+        margin-left: 0;
+        margin-top: 5px;
+        max-width: 100%; /* Ocupa todo el ancho */
+    }
+    .image-preview {
+        min-height: 120px; /* Altura mínima un poco menor en móviles */
+    }
+}
+
+@media (max-width: 480px) {
+    .file-upload-label {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+    .file-name-display {
+        font-size: 0.8em;
+    }
+    .image-preview:empty::before {
+        font-size: 0.8em;
+    }
+}
