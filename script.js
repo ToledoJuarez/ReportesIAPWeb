@@ -330,7 +330,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Función para comprimir imágenes antes de enviarlas
-async function compressImage(file, quality = 0.7) {
+async function compressImage(file, quality = 0.5) {
     return new Promise((resolve) => {
         const reader = new FileReader();
         reader.readAsDataURL(file);
