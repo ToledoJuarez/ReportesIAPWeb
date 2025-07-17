@@ -27,7 +27,7 @@ const closeButton = document.querySelector('.close-button');
 const fotoMapsFileNameDisplay = document.getElementById('fotoMapsFileName');
 const fotoCampoFileNameDisplay = document.getElementById('fotoCampoFileName');
 // --- Global Variables ---
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwd3tgXq95vgAGnpmzUFI0w5L5gyWGyeRq8oRtQ-WkRONqfLGSsjlYzcD8_97irKUIG/exec'; // ¡IMPORTANTE: Reemplaza con tu URL!
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby45fKB7H9j6qN7FLCNKfE116pmulepjIVKGAVyvU-WCMd-E1PmdjvH4kE6QkzlXBYL/exec'; // ¡IMPORTANTE: Reemplaza con tu URL!
 
 let currentFotoMapsFile = null;
 let currentFotoCampoFile = null;
